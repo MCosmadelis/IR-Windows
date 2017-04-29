@@ -10,7 +10,7 @@ New-NetFirewallRule -DisplayName "Disabling Port 23 (Telnet)" -Action Block -Dir
 New-NetFirewallRule -DisplayName "Disabling Port 80 " -Action Block -Direction Outbound -DynamicTarget Any -EdgeTraversalPolicy Block -Profile Any -Protocol tcp -RemotePort 80
 New-NetFirewallRule -DisplayName "Disabling Port 25 " -Action Block -Direction Outbound -DynamicTarget Any -EdgeTraversalPolicy Block -Profile Any -Protocol tcp -RemotePort 25
 
-Disable-PSRemoting -force
+#Disable-PSRemoting -force
 
 # If DNS exists, turn off zone updates and transfers 
 if (Get-Service -Name DnsServer -ErrorAction SilentlyContinue -ErrorVariable WindowsServiceExistsError){
